@@ -9,8 +9,8 @@ const business = {
     "Your One-Stop Destination for Fashion, Gift Items & Everyday Essentials",
 
   // ⚠️ Client se confirm karke final number use kare
-  phone: "95202 98681",
-  whatsapp: "919520298681",
+  phone: "9876543210",
+  whatsapp: "9876543210",
 
   email: "sample@gmail.com",
 
