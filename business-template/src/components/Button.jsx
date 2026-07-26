@@ -8,15 +8,15 @@ function Button({
   onClick,
 }) {
   const base =
-    "px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:scale-105";
+    "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:-translate-y-1";
 
   const styles = {
     primary:
-      "bg-green-500 text-white hover:bg-green-600 shadow-lg",
+      "bg-[#7C3AED] text-white shadow-[0_12px_30px_rgba(124,58,237,0.35)] hover:bg-[#6D28D9] hover:shadow-[0_18px_40px_rgba(124,58,237,0.45)]",
 
     secondary: darkMode
-      ? "border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900"
-      : "border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white",
+      ? "border-2 border-[#7C3AED] text-white hover:bg-[#7C3AED]"
+      : "bg-white border-2 border-[#7C3AED] text-[#7C3AED] hover:bg-[#7C3AED] hover:text-white shadow-md",
   };
 
   if (href) {

@@ -14,6 +14,7 @@ import GalleryPage from "./pages/GalleryPage";
 import ProductsPage from "./pages/ProductsPage";
 
 import Products from "./pages/Products";
+import CollectionPage from "./pages/CollectionPage";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -35,25 +36,26 @@ function App() {
 
       {/* Routes */}
       <Routes>
+        <Route path="/" element={<Home darkMode={darkMode} />} />
 
-  <Route path="/" element={<Home darkMode={darkMode} />} />
+        <Route path="/about" element={<AboutPage darkMode={darkMode} />} />
 
-  <Route path="/about" element={<AboutPage darkMode={darkMode} />} />
+        <Route
+          path="/products"
+          element={<ProductsPage darkMode={darkMode} />}
+        />
 
-  <Route path="/products" element={<ProductsPage darkMode={darkMode} />} />
+        <Route path="/gallery" element={<GalleryPage darkMode={darkMode} />} />
 
-  <Route path="/gallery" element={<GalleryPage darkMode={darkMode} />} />
+        <Route path="/contact" element={<ContactPage darkMode={darkMode} />} />
 
-  <Route path="/contact" element={<ContactPage darkMode={darkMode} />} />
+        <Route path="/shop" element={<Products darkMode={darkMode} />} />
 
-  <Route path="/shop" element={<Products darkMode={darkMode} />} />
-</Routes>
+        <Route path="/collection/:slug" element={<CollectionPage darkMode={darkMode}  />} />
+      </Routes>
 
       {/* Footer */}
-      <Footer
-        business={business}
-        darkMode={darkMode}
-      />
+      <Footer business={business} darkMode={darkMode} />
     </div>
   );
 }

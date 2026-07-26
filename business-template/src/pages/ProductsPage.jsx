@@ -1,4 +1,4 @@
-import Categories from "../components/Categories";
+import Categories from "../components/Categories-old";
 import business from "../data/business";
 
 function ProductsPage({ darkMode }) {

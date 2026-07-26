@@ -2,7 +2,6 @@ import Hero from "../components/Hero";
 import Stats from "../components/Stats";
 import About from "../components/About";
 import Categories from "../components/Categories";
-import Gallery from "../components/Gallery";
 import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
@@ -26,10 +25,7 @@ function Home({ darkMode }) {
         darkMode={darkMode}
       />
 
-      <Gallery
-        gallery={business.gallery}
-        darkMode={darkMode}
-      />
+      
 
       <FloatingWhatsApp business={business} />
 

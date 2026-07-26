@@ -9,13 +9,13 @@ function Hero({ business, darkMode }) {
       className={`relative overflow-hidden min-h-screen flex items-center transition-all duration-300 ${
         darkMode
           ? "bg-gradient-to-br from-slate-950 via-slate-900 to-gray-950"
-          : "bg-gradient-to-br from-violet-50 via-white to-pink-50"
+          : "bg-[linear-gradient(135deg,#FFFDF8_0%,#FAF5FF_45%,#FDF2F8_100%)]"
       }`}
     >
       {/* Background Blur */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-400/20 blur-3xl rounded-full"></div>
+      <div className="absolute top-20 left-10 w-80 h-80 bg-violet-400/20 blur-[120px] rounded-full"></div>
 
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-pink-300/20 blur-[120px] rounded-full"></div>
       <div className="relative max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
         {/* ================= LEFT ================= */}
         <motion.div
@@ -35,16 +35,20 @@ function Hero({ business, darkMode }) {
           </div>
 
           {/* Business Name */}
-          <h1 className="mt-8 text-5xl md:text-7xl font-black leading-tight">
-            <span className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
-              {business.name}
+          <h1 className="mt-8 font-black leading-[1.05]">
+            <span className="block text-5xl lg:text-7xl bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
+              Radhika Selection
+            </span>
+
+            <span className="block mt-2 text-5xl lg:text-7xl bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
+              & Gift Palace
             </span>
           </h1>
 
           {/* Marathi Name */}
           <h2
-            className={`mt-3 text-2xl font-semibold ${
-              darkMode ? "text-gray-300" : "text-gray-700"
+            className={`mt-5 text-xl lg:text-2xl font-medium tracking-wide ${
+              darkMode ? "text-gray-400" : "text-gray-600"
             }`}
           >
             {business.localName}
@@ -61,13 +65,13 @@ function Hero({ business, darkMode }) {
 
           {/* Description */}
           <p
-            className={`mt-6 text-lg leading-8 max-w-xl ${
+            className={`mt-8 text-lg leading-8 max-w-xl ${
               darkMode ? "text-gray-300" : "text-gray-600"
             }`}
           >
-            Discover a wide collection of clothing, gift items,
-            cosmetics, stationery, sports accessories and home décor
-            for your entire family.
+            Discover premium clothing, gift items, cosmetics, stationery, sports
+            accessories and stylish home décor — everything your family needs,
+            all under one roof.
           </p>
 
           {/* Buttons */}
@@ -77,9 +81,7 @@ function Hero({ business, darkMode }) {
             transition={{ delay: 0.4 }}
             className="flex flex-wrap gap-4 mt-10"
           >
-            <Button href="#categories">
-              🛍 Explore Collection
-            </Button>
+            <Button href="#products">🛍 Explore Collection</Button>
 
             <Button
               variant="secondary"
@@ -115,9 +117,7 @@ function Hero({ business, darkMode }) {
                 key={index}
                 whileHover={{ y: -6 }}
                 className={`rounded-2xl p-5 shadow-lg transition ${
-                  darkMode
-                    ? "bg-gray-800 border border-gray-700"
-                    : "bg-white"
+                  darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
                 }`}
               >
                 <h3
@@ -151,9 +151,9 @@ function Hero({ business, darkMode }) {
           <div className="absolute w-80 h-80 bg-purple-500/20 blur-3xl rounded-full"></div>
 
           <img
-            src={heroImage}
+            src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1200&auto=format&fit=crop&q=80"
             alt={business.name}
-            className="relative w-full max-w-xl rounded-[35px] shadow-[0_25px_60px_rgba(124,58,237,0.25)] hover:scale-105 transition-all duration-700"
+            className="relative w-full max-w-xl rounded-[35px] object-cover shadow-[0_25px_60px_rgba(124,58,237,0.25)] hover:scale-105 transition-all duration-700"
           />
         </motion.div>
       </div>

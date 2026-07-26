@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  CheckCircle,
-  Store,
-  Gift,
-  ShieldCheck,
-} from "lucide-react";
+import { CheckCircle, Store, Gift, ShieldCheck } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import Button from "./Button";
 
@@ -62,8 +57,33 @@ function About({ about = {}, business = {}, darkMode }) {
               alt={business?.name || "About Store"}
               className="relative w-full h-[500px] object-cover rounded-[32px] shadow-[0_25px_60px_rgba(124,58,237,0.25)] hover:scale-105 transition-all duration-700"
             />
+
+            {/* Floating Rating Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4 }}
+              viewport={{ once: true }}
+              className={`absolute bottom-6 right-6 rounded-2xl px-6 py-4 shadow-2xl ${
+                darkMode ? "bg-slate-800 border border-slate-700" : "bg-white"
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">⭐</span>
+                <span className="text-2xl font-bold text-violet-600">5.0</span>
+              </div>
+
+              <p
+                className={`text-sm mt-1 ${
+                  darkMode ? "text-gray-300" : "text-gray-600"
+                }`}
+              >
+                27 Google Reviews
+              </p>
+            </motion.div>
           </motion.div>
 
+          
           {/* Right Content */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
@@ -78,9 +98,7 @@ function About({ about = {}, business = {}, darkMode }) {
                   ? "bg-violet-900/40 text-violet-300"
                   : "bg-violet-100 text-violet-700"
               }`}
-            >
-              ⭐ Trusted Local Business
-            </span>
+            ></span>
 
             {/* Heading */}
             <h3
@@ -113,9 +131,7 @@ function About({ about = {}, business = {}, darkMode }) {
                       : "bg-white border border-gray-100"
                   }`}
                 >
-                  <div className="text-violet-600 mb-3">
-                    {feature.icon}
-                  </div>
+                  <div className="text-violet-600 mb-3">{feature.icon}</div>
 
                   <h4
                     className={`font-bold text-lg ${
@@ -138,9 +154,7 @@ function About({ about = {}, business = {}, darkMode }) {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mt-10">
-              <Button href={`tel:${business?.phone || ""}`}>
-                📞 Call Now
-              </Button>
+              <Button href={`tel:${business?.phone || ""}`}>📞 Call Now</Button>
 
               <Button
                 variant="secondary"
