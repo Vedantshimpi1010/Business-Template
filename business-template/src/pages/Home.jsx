@@ -16,8 +16,11 @@ function Home({ darkMode }) {
 
       <Stats darkMode={darkMode} />
 
-      <About about={business.about} darkMode={darkMode} />
-
+<About
+  about={business.about}
+  business={business}
+  darkMode={darkMode}
+/>
       <Categories
         categories={business.categories}
         darkMode={darkMode}
